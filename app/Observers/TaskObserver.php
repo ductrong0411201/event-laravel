@@ -20,8 +20,6 @@ class TaskObserver
         ]));
         $users = User::query()->where('id', $task->created_by)->get();
         $noti = Notification::send($users, new TaskChangeNotification());
-        dd($noti);
-
     }
     public function updated(Task $task)
     {
